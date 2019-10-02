@@ -11,7 +11,7 @@ public class DemoApplication {
 
 	@RequestMapping("/")
 	String home() {
-		return "Hello World test!";
+		return "Hello World test with jenkins!";
 	}
 
 	public static void main(String[] args) {
