@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building....'
-                sh 'export JAVA_HOME=/tools/jdk1.8.0_221 && /usr/local/src/apache-maven/bin/mvn install'
+                sh 'export JAVA_HOME=/tools/jdk1.8.0_221 && export MAVEN_OPTS="-Xmx3000m" && /usr/local/src/apache-maven/bin/mvn install'
                 sh 'docker build -t "aws-demo" .'
             }
         }
