@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building....'
+                sh 'export JAVA_HOME=/tools/jdk1.8.0_221'
                 sh 'echo $JAVA_HOME'
                 sh '/usr/local/src/apache-maven/bin/mvn spring-boot:run'
             }
