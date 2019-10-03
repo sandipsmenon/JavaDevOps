@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building....'
-                ./mvnw
+                sh 'mvn spring-boot:run'
             }
         }
         stage('Test') {
