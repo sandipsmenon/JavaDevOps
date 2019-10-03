@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building....'
+                sh 'pwd'
                 sh 'export JAVA_HOME=/tools/jdk1.8.0_221 && export MAVEN_OPTS="-Xmx3000m" && /usr/local/src/apache-maven/bin/mvn -Dmaven.test.skip=true install && docker build -t aws/test .'
                 sh 'ls'
                // sh 'sudo docker build -t aws/test .'
